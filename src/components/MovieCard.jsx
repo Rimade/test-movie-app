@@ -11,7 +11,9 @@ const MovieCard = ({ movie }) => {
 					src={`${IMAGE_PATH}${movie.poster_path}`}
 					alt="movie_image"
 				/>
-			) : null}
+			) : (
+				<div className="movie-placeholder">No image found</div>
+			)}
 			<h5 className="movie-title">{movie.title}</h5>
 		</div>
 	)
