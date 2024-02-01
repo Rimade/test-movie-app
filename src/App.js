@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import MovieCard from "./components/MovieCard";
+import './App.scss'
 
 function App() {
     const [movies, setMovies] = useState([])
@@ -12,7 +13,7 @@ function App() {
             params: {
                 api_key: process.env.REACT_APP_MOVIE_API_KEY,
             },
-        })
+        }).catch(err => console.log(err))
         setMovies(results)
     }
 
@@ -23,13 +24,13 @@ function App() {
 
     const renderMovies = () => (
         movies.map((movie) => (
-            <MovieCard key={movie.ud} movie={movie} />
+            <MovieCard key={movie.id} movie={movie} />
         ))
     )
 
     return (
         <div>
-            <h1 className='h-8'>Hello world</h1>
+            <h1>Hello world</h1>
             <div className="container">
                 {renderMovies()}
             </div>

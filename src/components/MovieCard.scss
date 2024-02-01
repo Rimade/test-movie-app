@@ -16,13 +16,13 @@ body {
 	display: grid;
 	grid-template-columns: repeat(4, 1fr);
 	margin: 10px;
+	img {
+		display: block;
+
+		padding: 10px;
+	}
 }
 
-.movie-posters img {
-	display: block;
-
-	padding: 10px;
-}
 .title {
 	/* Эффект свечения текста */
 	text-shadow: 0 0 10px #fff, 0 0 20px rgba(131, 58, 180, 1);
