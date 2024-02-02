@@ -5,7 +5,7 @@ import './App.scss'
 import YouTube from 'react-youtube';
 
 function App() {
-    const IMAGE_PATH = 'https://image.tmdb.org/t/p/w1280'
+    const IMAGE_PATH = 'https://image.tmdb.org/t/p/original'
     const API_URL = 'https://api.themoviedb.org/3'
 
     const [movies, setMovies] = useState([])
