@@ -40,7 +40,6 @@ function App() {
 
     useEffect(() => {
         fetchMovies()
-
     }, [])
 
     const selectMovie = async (movie) => {
