@@ -50,6 +50,12 @@ body {
 	justify-content: space-between;
 	align-items: center;
 	margin-bottom: 40px;
+	.header-link {
+		font-size: 36px;
+		cursor: pointer;
+		text-decoration: none;
+		color: whitesmoke;
+	}
 }
 
 .movie-cover {
@@ -66,4 +72,49 @@ body {
 	justify-content: center;
 	align-items: center;
 	color: #232839c3;
+}
+
+.hero {
+	position: relative;
+	min-height: 500px;
+	background-position: top center;
+	// background-repeat: no-repeat;
+	background-size: cover;
+	display: flex;
+	align-items: flex-end;
+}
+
+.hero-content {
+	max-width: 70%;
+	padding-bottom: 60px;
+}
+
+.hero-title {
+	font-size: 72px;
+	margin: 0;
+}
+
+.hero-btn {
+	margin-top: 24px;
+	margin-bottom: 24px;
+	padding: 10px 15px;
+	background-color: #232839;
+	color: wheat;
+	border: 1px solid whitesmoke;
+	border-radius: 1.5px;
+	cursor: pointer;
+	&-close {
+		position: absolute;
+		z-index: 10;
+		left: 30px;
+		bottom: 40px;
+	}
+}
+
+.youtube-container {
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	top: 0;
+	right: 0;
 }
