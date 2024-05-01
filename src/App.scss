@@ -1,3 +1,5 @@
+@import url(https://fonts.googleapis.com/css?family=Rubik+One&subset=latin,cyrillic);
+
 * {
 	font-family: 'Roboto', sans-serif;
 }
@@ -37,6 +39,7 @@ body {
 }
 
 .header-btn {
+	user-select: none;
 	padding: 8.5px;
 	background-color: rgb(238, 121, 121);
 	border: 0;
@@ -51,10 +54,21 @@ body {
 	align-items: center;
 	margin-bottom: 40px;
 	.header-link {
-		font-size: 36px;
-		cursor: pointer;
-		text-decoration: none;
-		color: whitesmoke;
+		// font-size: 36px;
+		// cursor: pointer;
+		// text-decoration: none;
+		// color: whitesmoke;
+		// background: linear-gradient(45deg, #0b2349 33%, #0d61bc 66%, #8aa9d6);
+		user-select: none;
+		font-family: 'Rubik One', sans-serif;
+		font-size: 30px;
+		text-transform: uppercase;
+		background: rgba(238, 121, 121, 0.2);
+		display: table;
+		color: white;
+		border-radius: 5px;
+		mix-blend-mode: difference;
+		padding: 5px 10px;
 	}
 }
 
@@ -89,15 +103,30 @@ body {
 	padding-bottom: 60px;
 }
 
+.hero-overview {
+	user-select: none;
+	line-height: 26px;
+	color: coral;
+	background: rgba(0, 0, 0, 0.3);
+	border-radius: 20px;
+	text-align: left;
+	padding-left: 14px;
+	padding-right: 7px;
+}
+
 .hero-title {
 	font-size: 72px;
-	margin: 0;
+	user-select: none;
+	color: white;
+	position: absolute;
+	top: 40px;
+	text-align: center;
 }
 
 .hero-btn {
-	margin-top: 24px;
-	margin-bottom: 24px;
-	padding: 10px 15px;
+	user-select: none;
+	margin: 24px auto;
+	padding: 20px 35px;
 	background-color: #232839;
 	color: wheat;
 	border: 1px solid whitesmoke;
