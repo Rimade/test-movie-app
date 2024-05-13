@@ -3,7 +3,6 @@ import Home from './pages/Home'
 import { Route, Routes, Link } from 'react-router-dom'
 import NotFound from './pages/NotFound'
 import './App.scss'
-import Header from './components/Header'
 
 function App() {
 	return (

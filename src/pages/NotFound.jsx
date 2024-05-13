@@ -2,8 +2,6 @@ import React from 'react'
 import styles from './NotFoundBlock.module.scss'
 import Header from '../components/Header'
 
-console.log(styles)
-
 const NotFound = () => {
 	return (
 		<>

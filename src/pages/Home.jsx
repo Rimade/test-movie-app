@@ -5,6 +5,8 @@ import MovieCard from './../components/MovieCard'
 import '../App.scss'
 import Header from './../components/Header'
 import Form from './../components/Form'
+import player from '../assets/img/play.png'
+import pause from '../assets/img/pause-button.png'
 
 const Home = () => {
 	const IMAGE_PATH = 'https://image.tmdb.org/t/p/original'
@@ -14,6 +16,7 @@ const Home = () => {
 	const [searchKey, setSearchKey] = useState('')
 	const [selectedMovie, setSelectedMovie] = useState({})
 	const [playerTrailer, setPlayerTrailer] = useState(false)
+	const [isVisible, setIsVisible] = useState(true)
 
 	const fetchMovies = async (searchKey) => {
 		const type = searchKey ? 'search' : 'discover'
@@ -65,9 +68,7 @@ const Home = () => {
 	}
 
 	const renderTrailer = () => {
-		console.log(selectedMovie.videos.results)
 		const trailer = selectedMovie.videos.results.find((video) => {
-			console.log(video)
 			return video.name === 'Official Trailer'
 		})
 		const key = trailer ? trailer.key : selectedMovie.videos.results[0].key
@@ -104,13 +105,22 @@ const Home = () => {
 					backgroundImage: `url('${IMAGE_PATH}${selectedMovie.backdrop_path}')`,
 				}}
 			>
-				<div className="hero-content centering ">
+				<div className="">
 					{playerTrailer && (
 						<button
-							className="hero-btn hero-btn-close"
-							onClick={() => setPlayerTrailer(false)}
+							className={'hero-btn hero-btn-play centering'}
+							onClick={() => {
+								setPlayerTrailer(false)
+								setIsVisible(!isVisible)
+							}}
 						>
-							Close
+							<img
+								className={isVisible ? ' none' : ''}
+								src={pause}
+								alt="pause"
+								width={50}
+								height={50}
+							/>
 						</button>
 					)}
 
@@ -119,8 +129,20 @@ const Home = () => {
 					{!playerTrailer && (
 						<h1 className="hero-title">{selectedMovie.title}</h1>
 					)}
-					<button className="hero-btn" onClick={() => setPlayerTrailer(true)}>
-						Play trailer
+					<button
+						className={'hero-btn hero-btn-play centering'}
+						onClick={() => {
+							setPlayerTrailer(true)
+							setIsVisible(!isVisible)
+						}}
+					>
+						<img
+							className={isVisible ? '' : ' none'}
+							src={player}
+							alt="Play trayler"
+							width={40}
+							height={40}
+						/>
 					</button>
 
 					{selectedMovie.overview ? (
